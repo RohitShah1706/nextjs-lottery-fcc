@@ -10,7 +10,7 @@ const LotteryEntrance = ()=> {
     const {chainId:chainIdHex,isWeb3Enabled, isLoading, isFetching} = useMoralis();
     const chainId = parseInt(chainIdHex);
     const lotteryAddress = chainId in contractAddress ? contractAddress[chainId][0] : null;
-    
+    console.log("You are on this chainId with conract address",chainId,lotteryAddress);
     
     const [entranceFee, setEntranceFee] = useState("0")
     const [numberOfPlayers, setNumberOfPlayers] = useState("0")
@@ -38,7 +38,7 @@ const LotteryEntrance = ()=> {
 
     // ! contract interaction functions
     const {runContractFunction: enterLottery} = useWeb3Contract({
-        abi:abi,
+        abi:abi[chainId],
         contractAddress: lotteryAddress,
         functionName: "enterLottery",
         params: {},
@@ -46,21 +46,21 @@ const LotteryEntrance = ()=> {
     })
 
     const {runContractFunction: getEntranceFee} = useWeb3Contract({
-        abi: abi,
+        abi: abi[chainId],
         contractAddress: lotteryAddress,
         functionName: "getEntranceFee",
         params: {},
     })
 
     const {runContractFunction: getNumberOfPlayers} = useWeb3Contract({
-        abi: abi,
+        abi: abi[chainId],
         contractAddress: lotteryAddress,
         functionName: "getNumberOfPlayers",
         params: {},
     })
 
     const {runContractFunction: getRecentWinner} = useWeb3Contract({
-        abi: abi,
+        abi: abi[chainId],
         contractAddress: lotteryAddress,
         functionName: "getRecentWinner",
         params: {},
