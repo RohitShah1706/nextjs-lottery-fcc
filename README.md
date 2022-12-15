@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# NEXT JS LOTTERY DAPP FRONTEND 
 
-First, run the development server:
+A frontend application built using NEXT JS for the Randomised Lottery smart contract.
+Users can connect to the DAPP using metamask on Goerli TestNet for now. Then they fund a prize pool of GoerliETH.  
+The Chainlink keepers at a fixed interval of time call the contract to get a randomised winner and transfer the whole pool GoerliETH to the winner.  
+
+Hosted on Fleek - [Lottery DAPP](https://nextjs-lottery-fcc.on.fleek.co/)  
+Contract deployed using Hardhat - [Lottery.sol](https://goerli.etherscan.io/address/0xAad95056EB2e0dC968aB1065c9846c005416E83c)  
+Hardhat code & Waffle tests - [lottery-hardhat-fcc](https://github.com/RohitShah1706/lottery-hardhat-fcc) 
+
+
+
+
+## Deployment
+
+To intall this project run
 
 ```bash
-npm run dev
-# or
-yarn dev
+  yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+To deploy this project run
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+  yarn run dev
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+## Acknowledgements
 
-To learn more about Next.js, take a look at the following resources:
+ - [Blockchain course FCC](https://www.youtube.com/watch?v=gyMwXuJrbJQ)
+ - [Hardhat Documentation](https://hardhat.org/)  
+ - [Chainlink Docs](https://docs.chain.link/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Authors
 
-## Deploy on Vercel
+- [@RohitShah1706](https://github.com/RohitShah1706)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
